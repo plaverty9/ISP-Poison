@@ -1,9 +1,6 @@
-import urllib
 import urllib2
 import random
 import time
-
-url=urllib2
 
 # uncomment and add a wordlist
 #wordlist =""
@@ -15,7 +12,7 @@ for line in f:
         ext = random.choice(tld)
         site = line + ext
         print("Getting "+site)
-        sleeptime = random.randint(2,3000)
+        sleeptime = random.randint(2,300)
         time.sleep(sleeptime)
         try: response = urllib2.urlopen('http://'+site)
         except (urllib2.HTTPError, urllib2.URLError):
